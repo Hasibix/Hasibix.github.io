@@ -30,14 +30,14 @@ jobs:
             # 4. Build VitePress
             - name: Build VitePress
               id: build
-              run: npx vitepress build
+              run: npm run build
 
             # 5. Upload static files as artifact
             - name: Upload static files as artifact
               id: deployment
               uses: actions/upload-pages-artifact@v4
               with:
-                  path: ./vitepress/dist/
+                  path: ./.vitepress/dist/
 
     # Deployment job
     deploy:
